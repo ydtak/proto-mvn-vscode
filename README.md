@@ -54,7 +54,7 @@ To generate Java sources (enables autocomplete) from `.proto` files, add the `pr
 
 ## Extensions
 
-Recommend using extension `jeongukjae.vscode-protobuf` from the VSCode Marketplace for proto support. Install `clang-format`, `txtpbfmt`, and `api-linter` to enable this extension to lint and format `.proto` files.
+Recommend using extension `zxh404.vscode-proto3` and `jeongukjae.vscode-protobuf` from the VSCode Marketplace for proto support. Install `clang-format`, `txtpbfmt`, and `api-linter` to enable `jeongukjae.vscode-protobuf` to lint and format `.proto` files.
 
 ### `clang-format`
 
