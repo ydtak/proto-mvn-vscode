@@ -1,0 +1,14 @@
+# proto-file: proto/example/example.proto
+# proto-message: Example
+
+id: 54321
+name: "Example Config from .textproto"
+proto_type: PROTO_TYPE_B
+inner_messages {
+  string_field: "inner message"
+  number_field: 1
+}
+inner_messages {
+  string_field: "inner message"
+  number_field: 2
+}

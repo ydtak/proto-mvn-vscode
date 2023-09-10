@@ -54,4 +54,33 @@ To generate Java sources (enables autocomplete) from `.proto` files, add the `pr
 
 ## Extensions
 
-Recommend using extension `zxh404.vscode-proto3` from the VSCode Marketplace for proto support. Install `clang-format` to enable this extension to format `.proto` files.
+Recommend using extension `jeongukjae.vscode-protobuf` from the VSCode Marketplace for proto support. Install `clang-format`, `txtpbfmt`, and `api-linter` to enable this extension to lint and format `.proto` files.
+
+### `clang-format`
+
+Install clang-format using `sudo apt install clang-format`. This is used to format `.proto` files.
+
+### `txtpbfmt`
+
+Install `txtpbfmt` following the instructions on [Github](https://github.com/protocolbuffers/txtpbfmt). This is used to format any `.textproto` files.
+
+Note this requires using `go` ([official installation docs](https://go.dev/doc/install)) and moving the `txtpbfmt` binary into the `PATH` directory.
+
+### `api-linter`
+
+Install `api-linter` following the instructions on the [official docs](https://linter.aip.dev/). This is used to to lint `.proto` files.
+
+The linter is quite heavy so one may consider [configuring](https://linter.aip.dev/configuration) the linter to disable certain rules. Add the following comment to a `.proto` file to disable linter rules. See the [Rule Documentation](https://linter.aip.dev/rules/) for all linter rules.
+
+```proto
+// (-- api-linter: <RULE_GROUP>::<AIP#>::<SCOPE>=disabled --)
+
+// For example the following disables Core rule for AIP 191 (proto-package).
+// See https://linter.aip.dev/191/proto-package.
+// (-- api-linter: core::0191::proto-package=disabled --)
+
+// Use the following to disable all Core rules for AIP 191.
+// (-- api-linter: core::0191=disabled --)
+```
+
+Note this requires using `go` ([official installation docs](https://go.dev/doc/install)) and moving the `api-linter` binary into the `PATH` directory.

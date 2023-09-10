@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+package example;
+
+// See https://linter.aip.dev/rules/.
+// (-- api-linter: core::0123=disabled --)
+// (-- api-linter: core::0191::proto-package=disabled --)
+// (-- api-linter: core::0215=disabled --)
+
+option java_multiple_files = true;
+option java_outer_classname = "ExampleProto";
+option java_package = "com.example";
+
+// Example proto.
+message Example {
+  // Id
+  int64 id = 1;
+
+  // Name
+  string name = 2;
+
+  // Proto type
+  ExampleType proto_type = 3;
+
+  // Inner message
+  message InnerMessage {
+    // String field
+    string string_field = 1;
+
+    // Number field
+    int64 number_field = 2;
+  }
+
+  // List of inner messages
+  repeated InnerMessage inner_messages = 4;
+}
+
+// Example proto type enum.
+enum ExampleType {
+  // Default / unspecified
+  EXAMPLE_TYPE_UNSPECIFIED = 0;
+
+  // Type A
+  PROTO_TYPE_A = 1;
+
+  // Type B
+  PROTO_TYPE_B = 2;
+}
